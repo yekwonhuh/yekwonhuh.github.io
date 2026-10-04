@@ -1,0 +1,9 @@
+.runtime/
+vendor/
+.bundle/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.DS_Store
+reviews/
+S01-*.png

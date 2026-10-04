@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+if [ ! -x "$project_root/.runtime/ruby/bin/ruby" ]; then
+  echo 'Project Ruby is missing. See README.md for setup.' >&2
+  exit 1
+fi
+export PATH="$project_root/.runtime/ruby/bin:$PATH"
+export GEM_SPEC_CACHE="$project_root/.runtime/gem-cache"
+export BUNDLE_USER_HOME="$project_root/.runtime/bundle-home"
+export BUNDLE_PATH="$project_root/vendor/bundle"
+cd "$project_root"
+case "$1" in
+  bundle|gem|jekyll) exec "$project_root/.runtime/ruby/bin/ruby" -S "$@" ;;
+  *) exec "$@" ;;
+esac

@@ -1,0 +1,3 @@
+- **July 2026:** Started as a Securities Quantitative Analytics Associate on the front office equities team at Wells Fargo in New York City.
+- **July 2025:** Started as a Quantitative Analytics Program Associate at Wells Fargo.
+- **May 2025:** Defended my dissertation, “Explainable Prognostics and Data-driven Modeling of Complex Data in Smart and Connected Systems.”

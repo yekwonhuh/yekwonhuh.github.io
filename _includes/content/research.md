@@ -1,0 +1,1 @@
+My research focuses on predictive modeling under uncertainty, degradation modeling with multimodal data, and explainable, domain-aware machine learning for prognostics. I study methods for building accurate, interpretable, and reliable models for engineering applications.

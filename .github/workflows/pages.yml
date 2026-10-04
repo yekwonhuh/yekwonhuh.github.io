@@ -1,0 +1,63 @@
+name: Publish approved website
+
+"on":
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Full commit SHA approved for this release
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Require the approved commit to match this workflow run
+        env:
+          RELEASE_SHA: ${{ inputs.release_sha }}
+        run: |
+          test "$RELEASE_SHA" = "$GITHUB_SHA"
+          [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]]
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.release_sha }}
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4.11'
+          bundler: '2.6.9'
+          bundler-cache: true
+      - uses: actions/configure-pages@v5
+      - name: Build production website
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --strict_front_matter
+      - name: Check public output
+        run: |
+          test -f _site/index.html
+          test -f _site/assets/css/main.css
+          test -f _site/assets/images/portrait.jpg
+          test "$(find _site -type f | wc -l)" -eq 3
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    runs-on: ubuntu-24.04
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the approved artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

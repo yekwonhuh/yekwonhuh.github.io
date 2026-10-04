@@ -1,0 +1,3 @@
+I am a Securities Quantitative Analytics Associate on the front office equities team at Wells Fargo in New York City. My background combines statistical modeling, machine learning, and engineering, with a focus on prediction, uncertainty, and interpretable models for decision-making.
+
+I earned my Ph.D. in Industrial and Systems Engineering at the [University of Wisconsin–Madison](https://www.wisc.edu/), advised by [Professor Kaibo Liu](https://kaibo.ie.wisc.edu/index.html), and an M.S. in Statistics at UW–Madison. Previously, I earned bachelor's degrees in Business Administration and Statistics at Korea University.

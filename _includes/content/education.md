@@ -1,0 +1,4 @@
+- **Ph.D., Industrial and Systems Engineering**, University of Wisconsin–Madison, 2020–2025. Minor: Computer Science.
+- **M.S., Statistics**, University of Wisconsin–Madison, 2023–2024.
+- **B.B.A.**, Korea University, 2014–2020.
+- **B.E., Statistics**, Korea University, 2014–2020.

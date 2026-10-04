@@ -1,0 +1,83 @@
+- id: "P01"
+  title: "An Integrated Uncertainty Quantification Model for Longitudinal and Time-to-Event Data"
+  display_title: "An integrated uncertainty quantification model for longitudinal and time-to-event data"
+  authors:
+    - "Ye Kwon Huh"
+    - "Minhee Kim"
+    - "Kaibo Liu"
+    - "Shiyu Zhou"
+  venue: "IEEE Transactions on Automation Science and Engineering"
+  year: 2025
+  status: "published"
+  url: "https://doi.org/10.1109/tase.2024.3432400"
+- id: "P02"
+  title: "Degradation modeling using Bayesian hierarchical piecewise linear models: A case study to predict void swelling in irradiated materials"
+  display_title: "Degradation modeling using Bayesian hierarchical piecewise linear models: A case study to predict void swelling in irradiated materials"
+  authors:
+    - "Ye Kwon Huh"
+    - "Minhee Kim"
+    - "Katie Olivas"
+    - "Todd Allen"
+    - "Kaibo Liu"
+  venue: "Journal of Quality Technology"
+  year: 2024
+  status: "published"
+  url: "https://doi.org/10.1080/00224065.2024.2369674"
+- id: "P03"
+  title: "Degradation Modeling and Prognostic Analysis Under Unknown Failure Modes"
+  display_title: "Degradation modeling and prognostic analysis under unknown failure modes"
+  authors:
+    - "Ying Fu"
+    - "Ye Kwon Huh"
+    - "Kaibo Liu"
+  venue: "IEEE Transactions on Automation Science and Engineering"
+  year: 2025
+  status: "published"
+  url: "https://doi.org/10.1109/tase.2025.3530845"
+- id: "P04"
+  title: "A Bayesian Spike-and-Slab Sensor Selection Approach for High-Dimensional Prognostics"
+  display_title: "A Bayesian spike-and-slab sensor selection approach for high-dimensional prognostics"
+  authors:
+    - "Ye Kwon Huh"
+    - "Ying Fu"
+    - "Kaibo Liu"
+  venue: "IEEE Transactions on Automation Science and Engineering"
+  year: 2025
+  status: "published"
+  url: "https://doi.org/10.1109/tase.2025.3555165"
+- id: "P05"
+  title: "A quantitative analysis of ATF surface characteristics on critical heat flux using Machine learning"
+  display_title: "A quantitative analysis of ATF surface characteristics on critical heat flux using machine learning"
+  authors:
+    - "Bruno P. Serrao"
+    - "Ye Kwon Huh"
+    - "Eliot Ciuperca"
+    - "Elvan Sahin"
+    - "Kaibo Liu"
+    - "Juliana P. Duarte"
+  venue: "Nuclear Engineering and Design"
+  year: 2025
+  status: "published"
+  url: "https://doi.org/10.1016/j.nucengdes.2025.113924"
+- id: "P06"
+  title: "Dynamic sensor selection for remote prognostics"
+  display_title: "Dynamic sensor selection for remote prognostics"
+  authors:
+    - "Ying Fu"
+    - "Ye Kwon Huh"
+    - "Kaibo Liu"
+  venue: "IISE Transactions"
+  year: 2026
+  status: "published"
+  url: "https://doi.org/10.1080/24725854.2025.2598633"
+- id: "P07"
+  title: "An uncertainty-informed neural network-based prognostic model for multi-type data"
+  display_title: "An uncertainty-informed neural network-based prognostic model for multi-type data"
+  authors:
+    - "Ye Kwon Huh"
+    - "Ying Fu"
+    - "Kaibo Liu"
+  venue: "IISE Transactions"
+  year: 2026
+  status: "under review"
+  url: null

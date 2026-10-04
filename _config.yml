@@ -1,0 +1,18 @@
+title: Ye Kwon Huh
+description: Securities Quantitative Analytics Associate at Wells Fargo. Statistical modeling, machine learning, and uncertainty quantification.
+url: https://yekwonhuh.github.io
+baseurl: ""
+markdown: kramdown
+strict_front_matter: true
+exclude:
+  - README.md
+  - website-rewrite-plan.md
+  - specs
+  - reviews
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .runtime
+  - S01-v3-repository-review.png
+  - S01-v3-repository-created.png

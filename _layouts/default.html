@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title | escape }}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="icon" type="image/jpeg" href="{{ site.data.profile.portrait | relative_url }}">
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="page">
+    {% assign profile = site.data.profile %}
+    <aside aria-label="Profile">
+      <h1>{{ profile.name | escape }}</h1>
+      <img src="{{ profile.portrait | relative_url }}" width="180" height="177" alt="{{ profile.portrait_alt | escape }}">
+      <div class="profile-details">
+      <p>{{ profile.role | escape }} - {{ profile.team | escape }}<br>{{ profile.employer | escape }}</p>
+      <p class="muted">{{ profile.location | escape }}</p>
+      <ul class="profile-links">
+        {% for link in profile.links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }}</a></li>{% endfor %}
+        <li class="muted">{{ profile.cv_placeholder | escape }}</li>
+      </ul>
+      </div>
+    </aside>
+    <main id="main-content" tabindex="-1">
+      <nav aria-label="Sections">
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#expertise">Expertise</a><a href="#publications">Publications</a><a href="#education">Education</a><a href="#teaching-service">Teaching &amp; Service</a><a href="#updates">Updates</a>
+      </nav>
+      <section id="about"><h2>About</h2>{% capture prose %}{% include content/about.md %}{% endcapture %}{{ prose | markdownify }}</section>
+      <section id="experience"><h2>Experience</h2>
+        {% for job in site.data.experience %}
+        <article class="job"><h3>{{ job.employer | escape }} <span class="muted">— {{ job.location | escape }}</span></h3>
+        <p>{{ job.role | escape }}{% if job.team_inline %} <span class="muted">· {{ job.team | escape }}</span>{% endif %}<br><span class="muted">{{ job.date_label | escape }}</span>{% if job.team and job.team_inline != true %}<br>{{ job.team | escape }}{% endif %}</p></article>
+        {% endfor %}
+      </section>
+      <section id="expertise"><h2>Expertise</h2>{% capture prose %}{% include content/expertise.md %}{% endcapture %}{{ prose | markdownify }}</section>
+      <section id="publications"><h2>Publications</h2>{% capture prose %}{% include content/research.md %}{% endcapture %}{{ prose | markdownify }}
+        {% assign groups = 'published,under review' | split: ',' %}
+        {% for group in groups %}<h3>{% if group == 'published' %}Published{% else %}Under Review{% endif %}</h3><ul class="papers">
+          {% assign years = site.data.publications | map: "year" | uniq | sort | reverse %}
+          {% for year in years %}{% for paper in site.data.publications %}{% if paper.status == group and paper.year == year %}
+          <li>{% if paper.url %}<a href="{{ paper.url | escape }}">{{ paper.display_title | default: paper.title | escape }}</a>{% else %}<span class="paper-title">{{ paper.display_title | default: paper.title | escape }}</span>{% endif %}<br>
+            {% for author in paper.authors %}{% if author == profile.name %}<strong>{{ author | escape }}</strong>{% else %}{{ author | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}<br>
+            <span class="muted"><em>{{ paper.venue | escape }}</em>, {{ paper.year }}.</span></li>
+          {% endif %}{% endfor %}{% endfor %}
+        </ul>{% endfor %}
+      </section>
+      <section id="education"><h2>Education</h2>{% capture prose %}{% include content/education.md %}{% endcapture %}{{ prose | markdownify }}</section>
+      <section id="teaching-service"><h2>Teaching &amp; Service</h2>{% capture prose %}{% include content/teaching-service.md %}{% endcapture %}{{ prose | markdownify }}</section>
+      <section id="updates"><h2>Updates</h2>{% capture prose %}{% include content/updates.md %}{% endcapture %}{{ prose | markdownify }}</section>
+    </main>
+  </div>
+</body>
+</html>
