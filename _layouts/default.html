@@ -33,7 +33,10 @@
       <section id="experience"><h2>Experience</h2>
         {% for job in site.data.experience %}
         <article class="job"><h3>{{ job.employer | escape }} <span class="muted">— {{ job.location | escape }}</span></h3>
-        <p>{{ job.role | escape }}{% if job.team_inline %} <span class="muted">· {{ job.team | escape }}</span>{% endif %}<br><span class="muted">{{ job.date_label | escape }}</span>{% if job.team and job.team_inline != true %}<br>{{ job.team | escape }}{% endif %}</p></article>
+        <p>{{ job.role | escape }}{% if job.team_inline %} <span class="muted">· {{ job.team | escape }}</span>{% endif %}<br><span class="muted">{{ job.date_label | escape }}</span>{% if job.team and job.team_inline != true %}<br>{{ job.team | escape }}{% endif %}</p>
+        {% if job.description %}<p>{{ job.description | escape }}</p>{% endif %}
+        {% if job.highlights %}<ul>{% for highlight in job.highlights %}<li>{{ highlight | escape }}</li>{% endfor %}</ul>{% endif %}
+        </article>
         {% endfor %}
       </section>
       <section id="expertise"><h2>Expertise</h2>{% capture prose %}{% include content/expertise.md %}{% endcapture %}{{ prose | markdownify }}</section>
