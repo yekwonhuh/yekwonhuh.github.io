@@ -27,7 +27,7 @@
     </aside>
     <main id="main-content" tabindex="-1">
       <nav aria-label="Sections">
-        <a href="#about">About</a><a href="#experience">Experience</a><a href="#updates">Updates</a><a href="#expertise">Expertise</a><a href="#publications">Publications</a><a href="#education">Education</a><a href="#teaching-service">Teaching &amp; Service</a>
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#updates">Updates</a><a href="#expertise">Skills</a><a href="#publications">Publications</a><a href="#education">Education</a><a href="#teaching-service">Teaching &amp; Service</a>
       </nav>
       <section id="about"><h2>About</h2>{% capture prose %}{% include content/about.md %}{% endcapture %}{{ prose | markdownify }}</section>
       <section id="experience"><h2>Experience</h2>
@@ -39,7 +39,7 @@
         {% endfor %}
       </section>
       <section id="updates"><h2>Updates</h2>{% capture prose %}{% include content/updates.md %}{% endcapture %}{{ prose | markdownify }}</section>
-      <section id="expertise"><h2>Expertise</h2>{% capture prose %}{% include content/expertise.md %}{% endcapture %}{{ prose | markdownify }}</section>
+      <section id="expertise"><h2>Skills</h2>{% capture prose %}{% include content/expertise.md %}{% endcapture %}{{ prose | markdownify }}</section>
       <section id="publications"><h2>Publications</h2>
         {% assign groups = 'published,under review' | split: ',' %}
         {% for group in groups %}<h3>{% if group == 'published' %}Published{% else %}Under Review{% endif %}</h3><ul class="papers">
