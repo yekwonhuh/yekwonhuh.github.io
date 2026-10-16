@@ -1,3 +1,5 @@
-**Statistical modeling:** Bayesian Statistics, Markov Chain Monte Carlo, Hierarchical Bayesian Modeling, Bayesian Neural Networks, Gaussian Processes, Deep Survival Models, and Uncertainty Quantification.
+**Quantitative Finance:** Equity Derivatives Pricing, Volatility Surface Modeling and Calibration.
 
-**Programming and tools:** Python (PyTorch, TensorFlow, Scikit-learn, SciPy), C++, R, SQL, MATLAB, AWS SageMaker, and Stan.
+**Statistical Modeling:** Bayesian Inference, Uncertainty Quantification, and Monte Carlo Simulation.
+
+**Programming:** Python, C++, R, MATLAB, and SQL.
